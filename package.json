@@ -1,0 +1,26 @@
+{
+  "name": "zemoga",
+  "version": "1.0.0",
+  "description": "Development test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andresblock/zemoga.git"
+  },
+  "keywords": [],
+  "author": "Andres Gomez Ceron",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Andresblock/zemoga/issues"
+  },
+  "homepage": "https://github.com/Andresblock/zemoga#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "express-handlebars": "^6.0.3",
+    "mongoose": "^6.2.7"
+  }
+}

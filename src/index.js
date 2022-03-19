@@ -21,6 +21,10 @@ app.set('view engine', '.hbs');
 
 // Configuracion de lectura de formato JSON:
 app.use(express.json());
+
+// Configuarion de middleware para captura de datos:
+app.use(express.urlencoded({extended: false}));
+
 // Routes
 app.use(routes);
 

@@ -1,5 +1,21 @@
 <h1>Texto desde el index</h1>
-<img src="{{portafolio.imagePath}}" alt="">
+{{#each portafolio}}
+    <a href="/actform/{{_id}}"><input type="button" value="Actualizar datos"></a>
+{{/each}}
+
+
 <pre>
-    {{portafolio}}
+{{#each portafolio}}
+    <pre>
+        <img src="{{imagePath}}" width="100px" height="120px">
+        
+        <label >Nombre: {{name}}</label>
+        <label >Correo: {{email}}</label>
+        <label >Direccion: {{address}}</label>
+        <label >Telefono: {{phone}}</label>
+        <label >Codigo postal: {{zipCode}}</label>
+        <label >Experiencia: {{experience}}</label>
+        
+    </pre>
+{{/each}}
 </pre>

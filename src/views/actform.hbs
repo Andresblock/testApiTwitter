@@ -1,0 +1,28 @@
+
+<form action="/updtPortfolio/{{portafolio._id}}" method="POST">
+    <label for="experience">Experiencia:</label>
+    <textarea id="experience" name="experience" rows="4" cols="20">{{portafolio.experience}}</textarea>
+    <br>
+    <label for="imagePath">URL imagen:</label>
+    <input type="text" id="imagePath" name="imagePath" value="{{portafolio.imagePath}}"></input>
+    <br>
+    <label for="name">Nombre:</label>
+    <input type="text" id="name" name="name" value="{{portafolio.name}}"></input>
+    <br>
+    <label for="twitterUser">Twitter:</label>
+    <input type="text" id="twitterUser" name="twitterUser" value="{{portafolio.twitterUser}}"></input>
+    <br>
+    <label for="email">Correo:</label>
+    <input type="text" id="email" name="email" value="{{portafolio.email}}"></input>
+    <br>
+    <label for="address">Direccion:</label>
+    <input type="text" id="address" name="address" value="{{portafolio.address}}"></input>
+    <br>
+    <label for="phone">Telefono:</label>
+    <input type="text" id="phone" name="phone" value="{{portafolio.phone}}"></input>
+    <br>
+    <label for="zipCode">Codigo postal:</label>
+    <input type="text" id="zipCode" name="zipCode" value="{{portafolio.zipCode}}"></input>
+    <br>
+    <button>Enviar datos</button>
+</form>

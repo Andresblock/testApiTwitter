@@ -1,5 +1,8 @@
-const Twitter =  require('twitter');
+const Twitter = require('twitter');
+const express = require('express');
 require('dotenv/config');
+
+let tweets = express.Router();
 
 // Varibales de twitter:
 
@@ -12,27 +15,29 @@ const barrer_token = process.env.barrer_token;
 // Definicion del objeto cliente para twitter:
 
 let client = new Twitter({
-    api_key: api_key,
-    api_secret_key: apiSecret_key,
-    access_token: access_token,
-    access_token_secret: access_token_secret
-    // consumer_key: access_token,
-    // consumer_secret: access_token_secret,
-    // bearer_token: barrer_token
+  consumer_key: api_key,
+  consumer_secret: apiSecret_key,
+  access_token_key: access_token,
+  access_token_secret: access_token_secret
 });
 
-let params = { screen_name: 'AndresGomcer' };
+let params = { screen_name: 'EnterateCali', count: 1 };
 
-let tweets = client.get('statuses/user_timeline', params, function(error, tweets, response){
+// client.get('statuses/user_timeline', params, function(error, tweets, response) {
+//     if (!error) {
+//         console.log('los tweets son: ',tweets);
+//     }
+// });
 
-    console.log(tweets);    
-    try {
-        if(!error){
-            console.log(tweets);
-        }
-    } catch (error) {
-        console.log(error);
+async function consultTwitter() {
+  
+  await client.get('statuses/user_timeline', params, function (error, tweets, response) {
+    if (!error) {
+      let respuesta = tweets
+      //console.log('los tweets son: ',tweets);
+      return respuesta;
     }
-});
+  })
+}
 
-module.exports = tweets;
+module.exports = { "consultTwitter": consultTwitter };

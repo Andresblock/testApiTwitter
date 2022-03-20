@@ -1,12 +1,14 @@
 const {Router} = require('express');
 const Portfolio = require('../models/Portfolio');
-const twitter = require('./twitter')
+const Twitter = require('./twitter')
 
 // Definicion de enrutador:
 const router = Router();
 
 // Definicion de ruta principal:
 router.get('/',async (req,res)=>{
+
+    console.log(Twitter.consultTwitter());
 
     const portafolio = await Portfolio.find().lean();
     res.render('index',{portafolio: portafolio});

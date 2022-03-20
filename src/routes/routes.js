@@ -1,6 +1,6 @@
 const {Router} = require('express');
 const Portfolio = require('../models/Portfolio');
-const twitter = require('./twitter')
+const Twitter = require('./twitter')
 
 // Definicion de enrutador:
 const router = Router();

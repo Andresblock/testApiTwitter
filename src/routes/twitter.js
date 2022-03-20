@@ -1,5 +1,8 @@
-const Twitter =  require('twitter');
+const Twitter = require('twitter');
+const express = require('express');
 require('dotenv/config');
+
+let tweets = express.Router();
 
 // Varibales de twitter:
 
@@ -18,12 +21,23 @@ let client = new Twitter({
   access_token_secret: access_token_secret
 });
 
-let params = {screen_name: 'EnterateCali', count: 5};
+let params = { screen_name: 'EnterateCali', count: 1 };
 
-client.get('statuses/user_timeline', params, function(error, tweets, response) {
+// client.get('statuses/user_timeline', params, function(error, tweets, response) {
+//     if (!error) {
+//         console.log('los tweets son: ',tweets);
+//     }
+// });
+
+async function consultTwitter() {
+  
+  await client.get('statuses/user_timeline', params, function (error, tweets, response) {
     if (!error) {
-        console.log('los tweets son: ',tweets);
+      let respuesta = tweets
+      //console.log('los tweets son: ',tweets);
+      return respuesta;
     }
-});
+  })
+}
 
-//module.exports = tweets;
+module.exports = { "consultTwitter": consultTwitter };
